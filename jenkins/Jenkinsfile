@@ -23,7 +23,7 @@ pipeline {
         }
         stage('SonarQube analysis') {
             steps {
-                withSonarQubeEnv() {
+                withSonarQubeEnv(installationName: 'SonarQube') {
                   sh 'mvn org.sonarsource.scanner.maven:sonar:sonar'
                 }
             }
